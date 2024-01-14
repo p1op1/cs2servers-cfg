@@ -28,3 +28,7 @@
 - [ ] Файлы cfg с готовыми параметрами
 - [ ] Отдельные настройки для warmup серверов
 - [ ] Отдельные настройки для НЕ 5v5 матчей
+
+P.S.: Обратите внимание на [данную разработку](https://github.com/deStrO/eBot-CSGO/), в особенности на файлы: [Config.php](https://github.com/deStrO/eBot-CSGO/blob/master/src/eBot/Config/Config.php) и [Match.php](https://github.com/deStrO/eBot-CSGO/blob/master/src/eBot/Match/Match.php).
+При необходимости — [домашняя страница программы](https://www.esport-tools.net/ebot/).
+
