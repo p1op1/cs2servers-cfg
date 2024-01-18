@@ -1,17 +1,16 @@
-# cs2servers-cfg
+# ПАРАМЕТРЫ ПРЕДНАСТРОЙКИ И ЗАПУСКА ИГРОВОГО СЕРВЕРА
 
 **Command line example:** 
 ```
 -dedicated -usercon -console -secure +game_type 0 +game_mode 1 +map de_dust2 +mapgroup mg_cs2 +exec server.cfg -ip 123.123.123.123 -port 27015 -maxplayers 10
 ```
 
-**⚠️WARNING**: If you're using a Docker image please, set your IP in startup commands to ___-ip 0.0.0.0___ or simply remove the -ip parameter. Thanks asdfxD for the fix.
+**⚠️WARNING**: If you're using a Docker image please, set your IP in startup commands to ___-ip 0.0.0.0___ or simply remove the -ip parameter. 
 
 *→*→*→
 
-Правило выдачи портов:
-Игровой сервер: 27015-27099 (по очереди)
-CSTV порт: 28015-28099 (последнии 2 цифры должны соответствовать игровому серверу)
+> [!TIP]
+> Правило выдачи портов: **Игровой сервер** — 27015-27099 (по очереди)      |     **CSTV порт**: 28015-28099 (последнии 2 цифры должны соответствовать игровому серверу)
 
 ##  Запуск сервера CS:GO в режиме **⚔️Competitive⚔️**   
 
