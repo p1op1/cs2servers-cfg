@@ -6,7 +6,6 @@ Command line example
 -dedicated -usercon -console -secure +game_type 0 +game_mode 1 +map de_dust2 +mapgroup mg_cs2 +exec server.cfg -ip 123.123.123.123 -port 27015 -maxplayers 10
 ```
 -->
-**⚠️WARNING**: If you're using a Docker image please, set your IP in startup commands to ___-ip 0.0.0.0___ or simply remove the -ip parameter. 
 
 *→*→*→
 
@@ -18,6 +17,8 @@ Command line example
 | GAME  |  DM  |✅ |**27515 - 27614** |**28515 - 28614** |
 | GAME  |  WG  |✅ |**27615 - 27714** |**28615 - 28714** |
 | GAME  |  ANY  |✅ |**276815 - 27814** |**276815 - 28814** |
+
+**⚠️WARNING**: If you're using a Docker image please, set your IP in startup commands to ___-ip 0.0.0.0___ or simply remove the -ip parameter. 
 
 ##  Запуск сервера CS:GO в режиме **⚔️Competitive⚔️**   
 
