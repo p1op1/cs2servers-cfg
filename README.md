@@ -11,12 +11,12 @@ Command line example
 
 Правило выдачи портов:
 
-| TYPE  | MODE | _CFG_ | **GAMESERVER PORT** | **CSTV PORT** |
+| TYPE  | MODE | PROP | **GAMESERVER PORT** | **CSTV PORT** |
 | ----- | ---- |------ |--------- |--------- |
-| GAME  | CMPT |✅ | **27015- 27514** | **28015- 28514** |
-| GAME  |  DM  |✅ |**27515 - 27614** |**28515 - 28614** |
-| GAME  |  WG  |✅ |**27615 - 27714** |**28615 - 28714** |
-| GAME  |  ANY  |✅ |**276815 - 27814** |**276815 - 28814** |
+| GAME  | CMPT | +game_type 0 +game_mode 1 -maxplayers 24| **27015- 27514** | **28015- 28514** |
+| GAME  |  DM  |+game_type 1 +game_mode 1 -maxplayers 10|**27515 - 27614** |**28515 - 28614** |
+| GAME  |  WG  | ❓❓❓ |**27615 - 27714** |**28615 - 28714** |
+| GAME  |  ANY  | ❓❓❓  |**276815 - 27814** |**276815 - 28814** |
 
 **⚠️WARNING**: If you're using a Docker image please, set your IP in startup commands to ___-ip 0.0.0.0___ or simply remove the -ip parameter. 
 
