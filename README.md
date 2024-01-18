@@ -11,7 +11,7 @@ Command line example
 
 Правило выдачи портов:
 
-| GAME  | MODE | _CFG_ | **GAMESERVER PORT** | **CSTV PORT** |
+| TYPE  | MODE | _CFG_ | **GAMESERVER PORT** | **CSTV PORT** |
 | ----- | ---- |------ |--------- |--------- |
 | GAME  | CMPT |✅ | **27015- 27514** | **28015- 28514** |
 | GAME  |  DM  |✅ |**27515 - 27614** |**28515 - 28614** |
