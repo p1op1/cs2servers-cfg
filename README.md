@@ -65,7 +65,8 @@ Command line example
    ```
 4. Применяет настройки сервера через RCON:
    ```bash
-   hostname "$hostname"
+   {
+    hostname "$hostname"
     changelevel $map
     mp_maxrounds $max_rounds
     mp_teamname_1 "$match_team_1"
@@ -78,6 +79,7 @@ Command line example
     mp_overtime_startmoney "$ot_startmoney"
     mp_overtime_halftime_pausetimer 0
     sv_load_forced_client_names_file namesfile.txt
+   }
    ```
 
 ---
