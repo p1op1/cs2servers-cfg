@@ -29,16 +29,22 @@ Command line example
       team2_name VARCHAR(32),
       team1_flag VARCHAR(4),
       team2_flag VARCHAR(4),
-      max_rounds INT DEFAULT 30,
+      max_rounds INT DEFAULT 24,
       map VARCHAR(32),
-      knife_round BOOLEAN DEFAULT TRUE,
+      knife_round BOOLEAN DEFAULT FALSE,
       ot_maxrounds INT DEFAULT 3,
       ot_startmoney INT DEFAULT 10000,
-      players_steamid JSON,  -- ["STEAM_1:0:12345", ...]
+      players_steamid JSON,  -- ["7656119798491111", "7656119798002222", ...]
       players_nick JSON      -- ["Player1", "Player2", ...]
   );
   ```
-- **Лог-файлы сервера** (`console.log`, `gamestate.log`).
+- **Лог-файлы сервера**.
+- ```bash
+  log on
+  mp_logdetail 3
+  logaddress_del_http
+  logaddress_add_http
+   ```
 
 ### **2.2. Выходные данные**
 - Конфигурационные файлы (`namesfile.txt`, `match_config.cfg`).
