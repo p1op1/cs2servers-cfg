@@ -66,10 +66,18 @@ Command line example
 4. Применяет настройки сервера через RCON:
    ```bash
    hostname "$hostname"
-   mp_teamname_1 "$team1"
-   mp_teamflag_1 "$team1_flag"
-   mp_maxrounds "$max_rounds"
-   exec match_config.cfg
+  changelevel $map
+  mp_maxrounds $max_rounds
+  mp_teamname_1 "$match_team_1"
+  mp_teamname_2 "$match_team_2"
+  mp_teamflag_1 "$match_teamflag_1"
+  mp_teamflag_2 "$match_teamflag_2"
+  mp_overtime_enable "0" (if $ot_maxrounds = 0)
+  mp_overtime_enable "1" (if $ot_maxrounds not 0)
+  mp_overtime_maxrounds "$ot_maxrounds"
+  mp_overtime_startmoney "$ot_startmoney"
+  mp_overtime_halftime_pausetimer 0
+  sv_load_forced_client_names_file namesfile.txt
    ```
 
 ---
@@ -100,19 +108,13 @@ Command line example
 
 ### **3.4. Игровой процесс**
 - **Пауза** (`!pause`):
-  - Доступна только в `mp_freezetime`.
-  - Требует `!unpause` от капитана противников.
+  - Устанавливается только во время `mp_freezetime`.
+  - Требует `!unpause` от двух команд.
 - **Статистика**:
   - Парсит логи убийств/смертей (`"PlayerX killed PlayerY with AK-47"`).
   - Отправляет уведомления:
     ```
-    [BAKS.GG] Счет: 5-3 | Осталось раундов: 12
-    ```
-- **Овертайм**:
-  - Активируется при ничье 15-15:
-    ```bash
-    mp_overtime_enable 1
-    mp_overtime_maxrounds 3
+    [BAKS.GG] $match_team_1 [ 5-3 ] $match_team_2
     ```
 
 ---
@@ -124,7 +126,7 @@ Command line example
    ```
 2. Отправляет результаты в чат:
    ```
-   [BAKS.GG] Матч завершен! Победила Team1 16-14.
+   [BAKS.GG] Матч завершен! Победила $match_team_1 - 16-14.
    Статистика: !stats
    ```
 
@@ -136,9 +138,9 @@ Command line example
 | `!ready`        | Подтвердить готовность            | Все игроки      |
 | `!stay`         | Оставить сторону после knife      | Капитаны        |
 | `!switch`       | Поменять стороны после knife      | Капитаны        |
-| `!pause`        | Поставить паузу                   | Капитаны        |
-| `!unpause`      | Снять паузу                       | Капитаны        |
-| `!report`       | Пожаловаться на игрока            | Все игроки      |
+| `!pause`        | Поставить паузу                   | Все игроки      |
+| `!unpause`      | Снять паузу                       | Все игроки      |
+| `!report`       | Пожаловаться                      | Все игроки      |
 | `!stats`        | Показать статистику               | Все игроки      |
 
 ---
@@ -175,7 +177,7 @@ async def handle_chat_command(steamid, message):
         db.execute("INSERT INTO ready_players VALUES (?, ?)", (match_id, steamid))
         send_chat(f"Игрок {get_nick(steamid)} готов.")
 
-    elif message == "!pause" and is_captain(steamid):
+    elif message == "!pause":
         valve.rcon.execute("mp_pause_match")
 
 def generate_namesfile(steamids, nicks):
