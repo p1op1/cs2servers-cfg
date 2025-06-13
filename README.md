@@ -66,18 +66,18 @@ Command line example
 4. Применяет настройки сервера через RCON:
    ```bash
    hostname "$hostname"
-  changelevel $map
-  mp_maxrounds $max_rounds
-  mp_teamname_1 "$match_team_1"
-  mp_teamname_2 "$match_team_2"
-  mp_teamflag_1 "$match_teamflag_1"
-  mp_teamflag_2 "$match_teamflag_2"
-  mp_overtime_enable "0" (if $ot_maxrounds = 0)
-  mp_overtime_enable "1" (if $ot_maxrounds not 0)
-  mp_overtime_maxrounds "$ot_maxrounds"
-  mp_overtime_startmoney "$ot_startmoney"
-  mp_overtime_halftime_pausetimer 0
-  sv_load_forced_client_names_file namesfile.txt
+    changelevel $map
+    mp_maxrounds $max_rounds
+    mp_teamname_1 "$match_team_1"
+    mp_teamname_2 "$match_team_2"
+    mp_teamflag_1 "$match_teamflag_1"
+    mp_teamflag_2 "$match_teamflag_2"
+    mp_overtime_enable "0" (if $ot_maxrounds = 0)
+    mp_overtime_enable "1" (if $ot_maxrounds not 0)
+    mp_overtime_maxrounds "$ot_maxrounds"
+    mp_overtime_startmoney "$ot_startmoney"
+    mp_overtime_halftime_pausetimer 0
+    sv_load_forced_client_names_file namesfile.txt
    ```
 
 ---
