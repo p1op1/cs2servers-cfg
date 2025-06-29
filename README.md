@@ -46,9 +46,16 @@ Command line example
   logaddress_add_http
    ```
 
-## **2.2. MetaMod Installation**
+  ### **2.2. Выходные данные**
+- Конфигурационные файлы (`namesfile.txt`, `match_config.cfg`).
+- Логи матча (`match_[ID].log`).
+- Статистика в БД (`kills`, `deaths`, `assists`, `score`, `ADR`).
 
-### **2.2.1: Download MetaMod**
+---
+
+## **2.3. MetaMod Installation**
+
+### **2.3.1: Download MetaMod**
 Download the latest stable version from:  
 [https://www.sourcemm.net/downloads.php?branch=stable](https://www.sourcemm.net/downloads.php?branch=stable)
 
@@ -65,14 +72,6 @@ csgo/
         ├── configs/
         └── metamod.vdf
 ```
-
-
-### **2.4. Выходные данные**
-- Конфигурационные файлы (`namesfile.txt`, `match_config.cfg`).
-- Логи матча (`match_[ID].log`).
-- Статистика в БД (`kills`, `deaths`, `assists`, `score`, `ADR`).
-
----
 
 ## **3. Сценарий работы**
 ### **3.1. Подготовка сервера**
