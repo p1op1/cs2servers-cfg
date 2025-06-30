@@ -80,6 +80,7 @@ csgo/
    ```python
    hostname = f"BAKS.GG::{team1} vs. {team2} | {match_id}"
    tv_demo = f"BAKS.GG::{team1} vs. {team2} on {map}.{match_id}"
+   changelevel "{map}"
    ```
 3. Генерирует `namesfile.txt`:
    ```json
@@ -89,7 +90,17 @@ csgo/
        "7656119798491234" "ApeX"
    }
    ```
-4. Применяет настройки сервера через RCON:
+
+ ```cpp
+ Перехват чат-сообщений
+void OnChatMessage(IGameEvent* event) {
+    if (strcmp(event->GetString("text"), "!ready") == 0) {
+        int userid = event->GetInt("userid");
+        // Валидация через game_state_integration
+    }
+}`
+```
+4. Применяет настройки сервера через RCON:))
    ```bash
    {
     hostname "$hostname"
@@ -111,6 +122,7 @@ csgo/
 ---
 
 ### **3.2. Фаза готовности**
+// RCON
 - Игроки подтверждают готовность командой `!ready`.
 - Бот проверяет 10 подтверждений и запускает матч:
   ```python
